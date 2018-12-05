@@ -7,9 +7,9 @@
  */
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, FlatList } from "react-native";
+import { Platform, StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
 import ListView from "./src/components/common/ListView"
-import {Header, Icon, Right} from "native-base"
+import {Header,Icon,  Right, Title, Button, Left} from "native-base"
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -41,14 +41,20 @@ export default class App extends Component<Props> {
   render() {
     console.log("dataSource11", this.state.dataSource);
     return (
-      <View >
+      <View style={{flex:1}}>
         <Header style = {{backgroundColor:"white"}}>
+        <Left><Title style = {{color:"red", fontSize:20, fontWeight: "bold"}}>
+          You tube
+        </Title>
+        </Left>
           <Right>
-        <Icon
-        type="material"
-          name="search"
-        />
+          <Button transparent>
+          <Icon name="search" 
+          type={"FontAwesome"}
+          style ={{ color:"grey" }}/>
+            </Button>
         </Right>
+      
           </Header>
        <FlatList
         data={this.state.dataSource}
