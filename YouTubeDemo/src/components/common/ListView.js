@@ -1,40 +1,34 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-class ListView extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    console.log("DataBaseLineData_2", this.props.thumbnail_image_name);
+const ListView = (props) => {
 
     return (
       <View style={styles.container}>
         <Image
           style={styles.Imagestyle}
-          source={{ uri: this.props.thumbnail_image_name }}
+          source={{ uri: props.thumbnail_image_name }}
         />
 
         <Text
           style={styles.DurationTextStyle}>
-          {(this.props.duration/60).toFixed(2)}
+          {(props.duration/60).toFixed(2)}
           </Text>
 
         <View style={{ flexDirection: "row" }}>
           <Image
             style={styles.smallImagestyle}
-            source={{ uri: this.props.profileImage }}
+            source={{ uri: props.profileImage }}
           />
           <View>
-            <Text style={styles.TextHeadingStyle}>{this.props.title}</Text>
-            <Text style={styles.TextStyle}>{this.props.name} . {this.props.number_of_views%1000}K Views . {(this.props.duration/60).toFixed(1)} min</Text>
+            <Text style={styles.TextHeadingStyle}>{props.title}</Text>
+            <Text style={styles.TextStyle}>{props.name} . {props.number_of_views%1000}K Views . {(props.duration/60).toFixed(1)} min</Text>
             
           </View>
         </View>
       </View>
     );
-  }
+  
 }
 
 const styles = StyleSheet.create({
