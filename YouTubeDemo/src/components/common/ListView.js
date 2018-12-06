@@ -41,18 +41,19 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   smallImagestyle: {
-    width: "10%",
+    width: "9%",
+    height: "100%",
     marginLeft: 10,
     marginBottom:5 ,
     borderRadius:20
   },
   TextHeadingStyle: {
-    fontSize: 12,
+    fontSize: 14,
     paddingLeft: 20,
     fontWeight: "bold"
   },
   TextStyle: {
-    fontSize: 12,
+    fontSize: 14,
     paddingLeft: 20,
     marginBottom: 5
   },
