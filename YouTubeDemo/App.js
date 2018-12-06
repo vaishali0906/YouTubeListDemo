@@ -72,7 +72,7 @@ export default class App extends Component<Props> {
   };
 
   onRefresh =()=>{
-   this.setState({isRefreshing:true})
+   this.setState({isRefreshing:true,allDataList: "" ,youTubeList: ""})
    this.getApiData();
   }
 
@@ -81,11 +81,11 @@ export default class App extends Component<Props> {
       <View style={{ flex: 1 }}>
         {this.setHeader()}
         <ActivityIndicator
-          animating={this.state.showLoader}
-          size="large"
-          color="red"
-          style={{ alignItems: "center", justifyContent: "center", flex: 3 }}
-        />
+      animating={this.state.showLoader}
+      size={this.state.showLoader ? "large":0}
+      color="red"
+      style={{ alignItems: "center", justifyContent: "center"}}
+    />
         <FlatList
         refreshControl={
           <RefreshControl
@@ -109,7 +109,7 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-
+  
   setHeader = () => {
     if (this.state.isSearchedBarActive) {
       return (
