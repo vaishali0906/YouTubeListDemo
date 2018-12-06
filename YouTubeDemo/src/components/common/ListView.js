@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   smallImagestyle: {
-    width: "9%",
+    width: "10%",
     height: "100%",
     marginLeft: 10,
     marginBottom:5 ,
